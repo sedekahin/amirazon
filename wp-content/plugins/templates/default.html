@@ -1,0 +1,59 @@
+{% api %}{% image %}{% video %}
+<article class="post-1 post type-post status-publish format-standard hentry category-uncategorized">
+	<div class="post-format-single standard"></div>
+
+	<div class="entry-wrap">
+	<header class="entry-header">
+			<a href="#" class="post-date"></a>
+			<h1 class="entry-title">{{ term | ucwords }}</h1>
+		</header><!--end .entry-header -->
+		<div class="entry-content">
+		<p>
+				{% for index, item in api %}
+				{% if index > 6 %}
+					{{item.title  | remove '...' | trim | strtolower | ucfirst | remove_common_words }}, {{item.description | remove '...' | trim | strtolower | ucfirst }}.
+				{% endif %}
+				{% endfor %}
+			</p><br/>
+			<p>
+				<img src="{{ images.2.mediaurl }}" alt="{{images.2.title}}" title="{{images.2.title}}">
+			</p>
+			</p><br />
+<h1 align="center"><u>Read More Review Here</u><br /><img src="http://2.bp.blogspot.com/-Xjib9i7ZguM/UNfkGdHMy_I/AAAAAAAAAF0/gvGSkwBPu5E/s1600/ArrowDownBlueGloss.gif" alt="Go"/></h1>
+<p align="center">
+					<a href="http://www.amazon.com/mn/search/?_encoding=UTF8&tag=malaonlisho0b-20&linkCode=ur2&camp=1789&creative=390957&field-keywords={{ term | ucwords }}&url=search-alias%3Daps" target="_blank" rel="nofollow"><img src="http://3.bp.blogspot.com/-CtKAZ88TiP4/URo1ktanH3I/AAAAAAAAAII/Medg8tTvMLQ/s1600/buynow-big.gif" alt="Click To View Product"/></a>
+				</p>
+			<br/>
+			
+			{% for index, item in images %}
+				{% if index < 6 %}
+				<p>
+				<img src="{{ item.mediaurl }}" alt="{{ item.title }}" title="{{ item.title }}">
+				
+				</p>
+				{% endif %}
+			{% endfor %}
+			
+			
+			<p>
+				{% for index, item in api %}
+				{% if index > 2 %}{% if index < 6 %}
+					{{item.title  | remove '...' | trim | strtolower | ucfirst | remove_common_words }}, {{item.description | remove '...' | trim | strtolower | ucfirst | remove_common_words }}.
+
+					{{ item.link }}
+				{% endif %}{% endif %}
+				{% endfor %}
+			</p>
+			<p>
+				{% for index, item in api %}
+				{% if index > 3 %}{% if index < 6 %}
+					{{item.title  | remove '...' | trim | strtolower | ucfirst | remove_common_words }}, {{item.description | remove '...' | trim | strtolower | ucfirst | remove_common_words }}.
+
+					{{ item.link }}
+				{% endif %}{% endif %}
+				{% endfor %}
+			</p>
+	  	</div>
+
+	</div>
+</article>
