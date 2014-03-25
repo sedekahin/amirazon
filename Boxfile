@@ -1,6 +1,7 @@
 web1: 
   name: wp-web 
   shared_writable_dirs:
+    - var/www/.htaccess
     - wp-content/uploads/
     - wp-content/plugins/bwp-google-xml-sitemaps/cache/
   after_build:
